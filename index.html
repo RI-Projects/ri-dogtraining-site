@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rogue Intelligence Dog Training — veteran-owned Board & Train and owner-lesson programs built on consistency, leadership, and understanding. Chandler, AZ, serving the greater Phoenix Valley." />
+  <title>Rogue Intelligence Dog Training</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #080808;
+      --dark:    #0e0e0e;
+      --panel:   #141414;
+      --panel2:  #1a1a1a;
+      --border:  #222;
+      --border2: #2e2e2e;
+      --accent:  #c8102e;
+      --accent2: #a00d24;
+      --gold:    #c9a84c;
+      --gold2:   #a88530;
+      --white:   #f2f2f2;
+      --muted:   #777;
+      --muted2:  #555;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body:    'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    .accent { color: var(--accent); }
+    .gold   { color: var(--gold); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 56px;
+      background: linear-gradient(to bottom, rgba(8,8,8,.98) 0%, rgba(8,8,8,.0) 100%);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: .14em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--accent2); }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 160px 56px 100px;
+    }
+    .hero-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 70% at 65% 55%, rgba(200,16,46,.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 760px; }
+    .eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+    .eyebrow-bar { width: 36px; height: 2px; background: var(--accent); flex-shrink: 0; }
+    .eyebrow span {
+      font-size: .7rem; font-weight: 700; letter-spacing: .24em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 6vw, 6rem);
+      line-height: .95;
+      letter-spacing: .03em;
+      margin-bottom: 32px;
+    }
+    .hero-sub {
+      font-size: 1.05rem; font-weight: 300; line-height: 1.75;
+      color: #999; max-width: 560px; margin-bottom: 48px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 36px; font-size: .76rem; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase;
+      text-decoration: none; transition: all .2s; cursor: pointer; border: none;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent2); }
+    .btn-ghost { background: transparent; color: var(--white); border: 1px solid var(--border2); }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-gold { background: var(--gold); color: var(--black); }
+    .btn-gold:hover { background: var(--gold2); }
+
+    /* ─── SECTION SHARED ─── */
+    .section { padding: 100px 56px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .label {
+      font-size: .68rem; font-weight: 700; letter-spacing: .24em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 18px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .label::before { content:''; width:24px; height:2px; background:var(--accent); display:block; }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      letter-spacing: .05em; line-height: .95; margin-bottom: 28px;
+    }
+    .section-body { font-size: .98rem; font-weight: 300; line-height: 1.85; color: #909090; }
+
+    .hr-accent { display: flex; align-items: center; gap: 20px; }
+    .hr-line { flex:1; height:1px; background: var(--border); }
+    .hr-diamond { width:7px; height:7px; background:var(--accent); transform:rotate(45deg); flex-shrink:0; }
+
+    /* ─── TRAINING PACKAGES ─── */
+    .training-packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .training-card {
+      background: var(--panel);
+      border: 1px solid var(--border2);
+      padding: 40px 32px;
+      position: relative;
+      transition: all .25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .training-card:hover { background: var(--panel2); border-color: var(--accent); }
+    .training-card.sale {
+      border: 1px solid var(--accent);
+      background: linear-gradient(135deg, rgba(200,16,46,.06) 0%, transparent 100%);
+    }
+    .training-card.sale:hover {
+      background: linear-gradient(135deg, rgba(200,16,46,.12) 0%, transparent 100%);
+      box-shadow: 0 0 20px rgba(200,16,46,.15);
+    }
+    .training-card.featured { border: 2px solid var(--gold); transform: scale(1.02); }
+    .training-card.featured:hover { box-shadow: 0 0 30px rgba(201,168,76,.2); }
+    .featured-badge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--gold); color: var(--black); font-size: .62rem; font-weight: 800;
+      letter-spacing: .22em; text-transform: uppercase; padding: 6px 16px; border-radius: 2px;
+    }
+    .package-header { margin-bottom: 24px; }
+    .package-title {
+      font-family: var(--font-display); font-size: 1.3rem; letter-spacing: .08em;
+      line-height: 1.2; margin-bottom: 8px; color: var(--white);
+    }
+    .package-duration {
+      font-size: .68rem; font-weight: 600; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .pricing-row { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; position: relative; }
+    .price-normal { font-size: 1rem; color: var(--muted); text-decoration: line-through; font-weight: 400; }
+    .price-sale {
+      font-family: var(--font-display); font-size: 2rem; letter-spacing: .04em;
+      color: var(--accent); font-weight: 700;
+    }
+    .price-large {
+      font-family: var(--font-display); font-size: 2rem; letter-spacing: .04em;
+      color: var(--gold); font-weight: 700;
+    }
+    .sale-badge {
+      background: var(--accent); color: #fff; font-size: .62rem; font-weight: 800;
+      letter-spacing: .18em; text-transform: uppercase; padding: 6px 12px;
+      margin-left: auto; flex-shrink: 0;
+    }
+    .package-features { list-style: none; margin-bottom: 24px; flex-grow: 1; }
+    .package-features li {
+      font-size: .85rem; font-weight: 300; line-height: 1.8; color: var(--muted);
+      padding-left: 20px; position: relative; margin-bottom: 8px;
+    }
+    .package-features li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .package-note {
+      font-size: .82rem; font-weight: 300; line-height: 1.6; color: var(--muted2);
+      margin-bottom: 28px; padding-top: 20px; border-top: 1px solid var(--border);
+    }
+    .training-card .btn { width: 100%; justify-content: center; }
+
+    /* ─── WHY CHOOSE ─── */
+    .why-choose-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .why-card {
+      background: var(--panel); border: 1px solid var(--border2); padding: 32px 28px;
+      text-align: center; transition: all .25s;
+    }
+    .why-card:hover { background: var(--panel2); border-color: var(--accent); }
+    .why-icon { font-size: 2.2rem; margin-bottom: 16px; }
+    .why-title {
+      font-family: var(--font-display); font-size: .9rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--white); margin-bottom: 12px;
+    }
+    .why-body { font-size: .82rem; font-weight: 300; line-height: 1.65; color: var(--muted); }
+
+    /* ─── GALLERY (dynamic, from dashboard) ─── */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+    .gallery-grid img, .gallery-grid video {
+      width: 100%; height: 220px; object-fit: cover; border-radius: 4px; border: 1px solid var(--border2);
+      display: block; background: var(--panel);
+    }
+    .section-empty { font-size: .85rem; color: var(--muted); text-align: center; padding: 24px 0; }
+
+    /* ─── UPDATES / POSTS (dynamic, from dashboard) ─── */
+    .updates-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+    .update-card { background: var(--panel); border: 1px solid var(--border2); border-radius: 6px; padding: 24px; }
+    .update-card img, .update-card video {
+      width: 100%; max-height: 200px; object-fit: cover; border-radius: 4px; margin-bottom: 16px; display: block;
+    }
+    .update-date {
+      font-size: .68rem; color: var(--accent); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 8px;
+    }
+    .update-title {
+      font-family: var(--font-display); font-size: 1.15rem; letter-spacing: .04em; margin-bottom: 10px; color: var(--white);
+    }
+
+    /* ─── CONTACT CTA ─── */
+    .community { position: relative; overflow: hidden; text-align: center; padding: 120px 56px; }
+    .community-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,16,46,.09), transparent 70%);
+      pointer-events: none;
+    }
+    .community-border { position: absolute; inset: 40px; border: 1px solid var(--border); pointer-events: none; }
+    .community-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .community-eyebrow {
+      font-size: .68rem; font-weight: 700; letter-spacing: .28em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 24px;
+    }
+    .community-title {
+      font-family: var(--font-display); font-size: clamp(2.6rem, 4.5vw, 4.5rem);
+      letter-spacing: .06em; line-height: .95; margin-bottom: 28px;
+    }
+    .community-sub { font-size: 1rem; font-weight: 300; line-height: 1.75; color: #999; margin-bottom: 40px; }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--black); border-top: 1px solid var(--border); padding: 56px; }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-copy { font-size: .7rem; color: var(--muted2); letter-spacing: .1em; }
+    .footer-links { list-style: none; display: flex; gap: 28px; }
+    .footer-links a { font-size: .8rem; color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--white); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      nav { padding: 20px 28px; }
+      .nav-links { display: none; }
+      .hero { padding: 130px 28px 60px; }
+      .section { padding: 72px 28px; }
+      .training-packages-grid { grid-template-columns: 1fr; }
+      .training-card.featured { transform: scale(1); }
+      .why-choose-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+      .updates-grid { grid-template-columns: 1fr; }
+      .community { padding: 80px 28px; }
+      .community-border { inset: 20px; }
+      footer { padding: 40px 28px; }
+      .footer-bottom { flex-direction: column; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav>
+    <a class="nav-logo" href="#">ROGUE<span>.</span>INTEL DOG TRAINING</a>
+    <ul class="nav-links">
+      <li><a href="#board-train">Board &amp; Train</a></li>
+      <li><a href="#lessons">Lessons</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://app.ri-dogtraining.com">Client Login</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Book Now</a>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="eyebrow">
+        <div class="eyebrow-bar"></div>
+        <span>Veteran Owned &middot; Chandler, AZ</span>
+      </div>
+      <h1 class="hero-title">CONSISTENCY.<br>LEADERSHIP.<br><span class="gold">UNDERSTANDING.</span></h1>
+      <p class="hero-sub">
+        We train for more than obedience — for confidence, communication, and teamwork between
+        you and your dog. Board &amp; Train and owner lesson programs serving the greater Phoenix Valley.
+        One dog. One family. One success story at a time.
+      </p>
+      <div class="hero-actions">
+        <a href="#board-train" class="btn btn-primary">See Packages</a>
+        <a href="#contact" class="btn btn-ghost">Book a Call</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section" style="padding-top:0; padding-bottom:0;">
+    <div class="container"><div class="hr-accent"><div class="hr-line"></div><div class="hr-diamond"></div><div class="hr-line"></div></div></div>
+  </div>
+
+  <!-- ─── BOARD & TRAIN ─── -->
+  <section class="section" id="board-train">
+    <div class="container">
+      <div class="label">Full Immersion</div>
+      <h2 class="section-title">BOARD &amp; TRAIN</h2>
+      <p class="section-body" style="margin-bottom: 56px;">
+        Your dog lives with us and trains daily in a structured, supportive environment built on
+        clear expectations and follow-through. Then we teach you how to maintain it at home,
+        so the results last.
+      </p>
+
+      <div class="training-packages-grid">
+        <div class="training-card sale">
+          <div class="package-header">
+            <h4 class="package-title">BASIC OBEDIENCE</h4>
+            <div class="package-duration">2–3 Weeks</div>
+          </div>
+          <div class="pricing-row">
+            <span class="price-normal">$3,000</span>
+            <span class="price-sale">$1,500</span>
+            <span class="sale-badge">50% OFF</span>
+          </div>
+          <ul class="package-features">
+            <li>Daily training (5–6 days/week)</li>
+            <li>Obstacle course integration</li>
+            <li>Boarding &amp; meals included</li>
+            <li>Video progress updates</li>
+            <li>Owner training session</li>
+          </ul>
+          <p class="package-note">
+            Foundation work. Sit, stay, come, leash manners, impulse control.
+            Your dog comes home confident and responsive.
+          </p>
+          <a href="mailto:Info@ri-dogtraining.com?subject=Book%20Basic%20Obedience%20Board%20%26%20Train" class="btn btn-gold">Book Now</a>
+        </div>
+
+        <div class="training-card sale">
+          <div class="package-header">
+            <h4 class="package-title">PUBLIC ACCESS</h4>
+            <div class="package-duration">4–5 Weeks</div>
+          </div>
+          <div class="pricing-row">
+            <span class="price-normal">$3,500</span>
+            <span class="price-sale">$2,500</span>
+            <span class="sale-badge">29% OFF</span>
+          </div>
+          <ul class="package-features">
+            <li>Everything in Basic Obedience</li>
+            <li>Public environment training</li>
+            <li>Distraction desensitization</li>
+            <li>Advanced impulse control</li>
+            <li>Social confidence building</li>
+            <li>Extended owner training</li>
+          </ul>
+          <p class="package-note">
+            Real-world situations. Your dog navigates crowds, distractions, unfamiliar
+            environments with focus and calm.
+          </p>
+          <a href="mailto:Info@ri-dogtraining.com?subject=Book%20Public%20Access%20Board%20%26%20Train" class="btn btn-gold">Book Now</a>
+        </div>
+
+        <div class="training-card sale featured">
+          <div class="featured-badge">MOST POPULAR</div>
+          <div class="package-header">
+            <h4 class="package-title">ADVANCED OBEDIENCE</h4>
+            <div class="package-duration">6–8 Weeks</div>
+          </div>
+          <div class="pricing-row">
+            <span class="price-normal">$4,200</span>
+            <span class="price-sale">$3,500</span>
+            <span class="sale-badge">17% OFF</span>
+          </div>
+          <ul class="package-features">
+            <li>Everything in Public Access</li>
+            <li>Off-leash precision training</li>
+            <li>Advanced obstacle course mastery</li>
+            <li>Distance commands &amp; hand signals</li>
+            <li>Multi-dog dynamics</li>
+            <li>Emergency recall lockdown</li>
+            <li>Comprehensive owner training (2+)</li>
+            <li>30-day follow-up support</li>
+          </ul>
+          <p class="package-note">
+            Complete mastery. Off-leash reliability across real-world environments — your dog
+            stays engaged and responsive at distance, even with distractions.
+          </p>
+          <a href="mailto:Info@ri-dogtraining.com?subject=Book%20Advanced%20Obedience%20Board%20%26%20Train" class="btn btn-gold">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── LESSONS ─── -->
+  <section class="section" id="lessons" style="background:var(--dark);">
+    <div class="container">
+      <div class="label">Owner Training</div>
+      <h2 class="section-title">LESSONS</h2>
+      <p class="section-body" style="margin-bottom: 56px;">
+        You're not just getting a trained dog — you're becoming a confident, capable handler.
+        We teach you the concepts, not just the commands, so the relationship you build together lasts.
+      </p>
+
+      <div class="training-packages-grid">
+        <div class="training-card">
+          <div class="package-header">
+            <h4 class="package-title">BASIC OBEDIENCE</h4>
+            <div class="package-duration">4–5 Sessions</div>
+          </div>
+          <div class="pricing-row"><span class="price-large">$500</span></div>
+          <ul class="package-features">
+            <li>One-on-one sessions</li>
+            <li>Sit, stay, come, leash training</li>
+            <li>Behavior problem-solving</li>
+            <li>Take-home exercise plan</li>
+            <li>Owner support between sessions</li>
+          </ul>
+          <p class="package-note">Owner + dog learn together. We teach you the techniques. You build the handler skills.</p>
+          <a href="mailto:Info@ri-dogtraining.com?subject=Book%20Basic%20Obedience%20Lessons" class="btn btn-ghost">Schedule Lessons</a>
+        </div>
+
+        <div class="training-card">
+          <div class="package-header">
+            <h4 class="package-title">PUBLIC ACCESS</h4>
+            <div class="package-duration">7–8 Sessions</div>
+          </div>
+          <div class="pricing-row"><span class="price-large">$950</span></div>
+          <ul class="package-features">
+            <li>One-on-one on-location sessions</li>
+            <li>Public environment training</li>
+            <li>Distraction desensitization</li>
+            <li>Stranger interaction protocol</li>
+            <li>Long-line &amp; off-leash foundation</li>
+            <li>Video documentation</li>
+          </ul>
+          <p class="package-note">Real-world confidence. We take your dog (with you) into public settings. You see the training and learn to maintain it.</p>
+          <a href="mailto:Info@ri-dogtraining.com?subject=Book%20Public%20Access%20Lessons" class="btn btn-ghost">Schedule Lessons</a>
+        </div>
+
+        <div class="training-card">
+          <div class="package-header">
+            <h4 class="package-title">ADVANCED OBEDIENCE</h4>
+            <div class="package-duration">10–12 Sessions</div>
+          </div>
+          <div class="pricing-row"><span class="price-large">$1,500</span></div>
+          <ul class="package-features">
+            <li>One-on-one sessions</li>
+            <li>Off-leash precision training</li>
+            <li>Advanced obstacle course work</li>
+            <li>Distance commands &amp; hand signals</li>
+            <li>Multi-dog dynamics intro</li>
+            <li>Handler technique certification</li>
+            <li>Video progress library</li>
+          </ul>
+          <p class="package-note">Serious handler training. Learn to run advanced sequences, read your dog, command at distance, and troubleshoot in real-time.</p>
+          <a href="mailto:Info@ri-dogtraining.com?subject=Book%20Advanced%20Obedience%20Lessons" class="btn btn-ghost">Schedule Lessons</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURED PACKAGES (live from dashboard) ─── -->
+  <section class="section" id="featured-packages">
+    <div class="container">
+      <div class="label">Current Offerings</div>
+      <h2 class="section-title">FEATURED PACKAGES</h2>
+      <p class="section-body" style="margin-bottom: 56px;">
+        Live pricing straight from our training system — updated as our programs evolve.
+      </p>
+      <div class="training-packages-grid" id="packages-grid"></div>
+      <p class="section-empty" id="packages-empty" style="display:none;">
+        Check back soon for featured packages, or reach out directly to build a custom plan.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── GALLERY (live from dashboard) ─── -->
+  <section class="section" id="gallery" style="background:var(--dark);">
+    <div class="container">
+      <div class="label">Real Results</div>
+      <h2 class="section-title">TRAINING GALLERY</h2>
+      <p class="section-body" style="margin-bottom: 56px;">
+        Real dogs, real sessions, real transformations.
+      </p>
+      <div class="gallery-grid" id="gallery-grid"></div>
+      <p class="section-empty" id="gallery-empty" style="display:none;">
+        New training photos and videos are added regularly — check back soon.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── LATEST UPDATES (live from dashboard) ─── -->
+  <section class="section" id="updates">
+    <div class="container">
+      <div class="label">From The Team</div>
+      <h2 class="section-title">LATEST UPDATES</h2>
+      <div class="updates-grid" id="updates-grid"></div>
+      <p class="section-empty" id="updates-empty" style="display:none;">
+        No updates posted yet — check back soon.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── WHY CHOOSE ─── -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="label">Our Approach</div>
+      <h2 class="section-title">CONSISTENCY. LEADERSHIP. UNDERSTANDING.</h2>
+      <div class="why-choose-grid">
+        <div class="why-card">
+          <div class="why-icon">🎯</div>
+          <h4 class="why-title">Consistency</h4>
+          <p class="why-body">Clear expectations, repetition, and follow-through. Consistency is the foundation of every goal we set with your dog.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🧭</div>
+          <h4 class="why-title">Leadership</h4>
+          <p class="why-body">Structure, guidance, and confidence. Dogs find their place within the family when we provide fair rules and clear communication.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💡</div>
+          <h4 class="why-title">Understanding</h4>
+          <p class="why-body">Knowing a command isn't the same as understanding it. We build dogs that can think, adapt, and stay focused through distraction.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🤝</div>
+          <h4 class="why-title">The Handler Matters</h4>
+          <p class="why-body">You're not just getting a trained dog — you're building a relationship. That bond, and the skills behind it, stay with you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section class="community" id="contact">
+    <div class="community-bg"></div>
+    <div class="community-border"></div>
+    <div class="community-content">
+      <div class="community-eyebrow">Ready to Start</div>
+      <h2 class="community-title">BOOK YOUR<br><span class="accent">DOG'S</span> TRAINING</h2>
+      <p class="community-sub">
+        Chandler, AZ &mdash; serving the greater Phoenix Valley. Board &amp; Train or owner lessons.
+        Reach out and we'll get you scheduled.
+      </p>
+      <a href="mailto:Info@ri-dogtraining.com?subject=Dog%20Training%20Inquiry" class="btn btn-primary">Email Us</a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 ROGUE INTELLIGENCE DOG TRAINING — ALL RIGHTS RESERVED</div>
+      <ul class="footer-links">
+        <li><a href="mailto:Info@ri-dogtraining.com">Email</a></li>
+        <li><a href="tel:4802690530">(480) 269-0530</a></li>
+        <li><a href="tel:3108034204">(310) 803-4204</a></li>
+        <li><a href="https://instagram.com/ri_dogtraining" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var API_BASE = "https://app.ri-dogtraining.com";
+
+      function escapeHtml(str) {
+        var div = document.createElement("div");
+        div.textContent = str == null ? "" : String(str);
+        return div.innerHTML;
+      }
+
+      function formatDate(iso) {
+        try {
+          return new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+        } catch (e) {
+          return "";
+        }
+      }
+
+      function renderPackages(packages) {
+        var grid = document.getElementById("packages-grid");
+        var empty = document.getElementById("packages-empty");
+        if (!packages || !packages.length) {
+          empty.style.display = "block";
+          return;
+        }
+        grid.innerHTML = packages.map(function (p) {
+          var features = "<li>" + p.sessions + " session" + (p.sessions === 1 ? "" : "s") + "</li>";
+          (p.benefits || []).forEach(function (b) {
+            features += "<li>" + escapeHtml(b.title) + "</li>";
+          });
+          if (p.ecollarAddOn) features += "<li>E-Collar option available (+$250)</li>";
+          var duration = p.duration ? '<div class="package-duration">' + p.duration + " days</div>" : "";
+          var note = p.description ? '<p class="package-note">' + escapeHtml(p.description) + "</p>" : "";
+          var price = "$" + Number(p.price).toLocaleString();
+          return (
+            '<div class="training-card">' +
+            '<div class="package-header"><h4 class="package-title">' + escapeHtml(p.name.toUpperCase()) + "</h4>" + duration + "</div>" +
+            '<div class="pricing-row"><span class="price-large">' + price + "</span></div>" +
+            '<ul class="package-features">' + features + "</ul>" +
+            note +
+            '<a href="mailto:Info@ri-dogtraining.com?subject=' + encodeURIComponent("Inquiry: " + p.name) + '" class="btn btn-gold">Book Now</a>' +
+            "</div>"
+          );
+        }).join("");
+      }
+
+      function renderGallery(items) {
+        var grid = document.getElementById("gallery-grid");
+        var empty = document.getElementById("gallery-empty");
+        if (!items || !items.length) {
+          empty.style.display = "block";
+          return;
+        }
+        grid.innerHTML = items.map(function (item) {
+          if (item.mediaType === "VIDEO") {
+            return '<video src="' + item.mediaUrl + '" muted loop playsinline preload="metadata"></video>';
+          }
+          return '<img src="' + item.mediaUrl + '" alt="' + escapeHtml(item.caption || "Training photo") + '" loading="lazy" />';
+        }).join("");
+      }
+
+      function renderPosts(posts) {
+        var grid = document.getElementById("updates-grid");
+        var empty = document.getElementById("updates-empty");
+        if (!posts || !posts.length) {
+          empty.style.display = "block";
+          return;
+        }
+        grid.innerHTML = posts.map(function (post) {
+          var media = post.media && post.media[0] && post.media[0].galleryItem;
+          var mediaHtml = "";
+          if (media) {
+            mediaHtml = media.mediaType === "VIDEO"
+              ? '<video src="' + media.mediaUrl + '" muted loop playsinline preload="metadata"></video>'
+              : '<img src="' + media.mediaUrl + '" alt="" loading="lazy" />';
+          }
+          var title = post.title ? '<h4 class="update-title">' + escapeHtml(post.title) + "</h4>" : "";
+          return (
+            '<div class="update-card">' + mediaHtml +
+            '<div class="update-date">' + formatDate(post.createdAt) + "</div>" +
+            title +
+            '<p class="why-body">' + escapeHtml(post.body) + "</p>" +
+            "</div>"
+          );
+        }).join("");
+      }
+
+      fetch(API_BASE + "/api/public/packages")
+        .then(function (r) { return r.json(); })
+        .then(function (d) { renderPackages(d.packages); })
+        .catch(function () { document.getElementById("packages-empty").style.display = "block"; });
+
+      fetch(API_BASE + "/api/public/gallery")
+        .then(function (r) { return r.json(); })
+        .then(function (d) { renderGallery(d.items); })
+        .catch(function () { document.getElementById("gallery-empty").style.display = "block"; });
+
+      fetch(API_BASE + "/api/public/posts")
+        .then(function (r) { return r.json(); })
+        .then(function (d) { renderPosts(d.posts); })
+        .catch(function () { document.getElementById("updates-empty").style.display = "block"; });
+    })();
+  </script>
+
+</body>
+</html>
