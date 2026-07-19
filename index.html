@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Rogue Intelligence Dog Training — veteran-owned Board & Train and owner-lesson programs built on consistency, leadership, and understanding. Chandler, AZ, serving the greater Phoenix Valley." />
   <title>Rogue Intelligence Dog Training</title>
+  <link rel="icon" type="image/png" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:title" content="Rogue Intelligence Dog Training" />
+  <meta property="og:description" content="Veteran-owned Board & Train and owner-lesson programs built on consistency, leadership, and understanding. Chandler, AZ." />
+  <meta property="og:image" content="https://ri-dogtraining.com/ri-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -52,6 +58,9 @@
       background: linear-gradient(to bottom, rgba(8,8,8,.98) 0%, rgba(8,8,8,.0) 100%);
     }
     .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-family: var(--font-display);
       font-size: 1.5rem;
       letter-spacing: .14em;
@@ -59,6 +68,7 @@
       text-decoration: none;
     }
     .nav-logo span { color: var(--accent); }
+    .nav-logo-badge { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
     .nav-links { display: flex; gap: 40px; list-style: none; }
     .nav-links a {
       font-size: .72rem;
@@ -97,6 +107,16 @@
       inset: 0;
       background: radial-gradient(ellipse 55% 70% at 65% 55%, rgba(200,16,46,.10) 0%, transparent 70%);
       pointer-events: none;
+    }
+    .hero-badge {
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 320px;
+      z-index: 1;
+      pointer-events: none;
+      filter: drop-shadow(0 0 40px rgba(200,16,46,.15));
     }
     .hero-content { position: relative; z-index: 2; max-width: 760px; }
     .eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
@@ -288,6 +308,7 @@
       nav { padding: 20px 28px; }
       .nav-links { display: none; }
       .hero { padding: 130px 28px 60px; }
+      .hero-badge { display: none; }
       .section { padding: 72px 28px; }
       .training-packages-grid { grid-template-columns: 1fr; }
       .training-card.featured { transform: scale(1); }
@@ -305,7 +326,10 @@
 
   <!-- ─── NAV ─── -->
   <nav>
-    <a class="nav-logo" href="#">ROGUE<span>.</span>INTEL DOG TRAINING</a>
+    <a class="nav-logo" href="#">
+      <img src="/apple-touch-icon.png" alt="" class="nav-logo-badge" />
+      ROGUE<span>.</span>INTEL DOG TRAINING
+    </a>
     <ul class="nav-links">
       <li><a href="#board-train">Board &amp; Train</a></li>
       <li><a href="#lessons">Lessons</a></li>
@@ -320,6 +344,7 @@
   <!-- ─── HERO ─── -->
   <section class="hero" aria-label="Hero">
     <div class="hero-glow"></div>
+    <img src="/ri-logo-badge.png" alt="Rogue Intelligence Dog Training emblem" class="hero-badge" />
     <div class="hero-content">
       <div class="eyebrow">
         <div class="eyebrow-bar"></div>
