@@ -110,13 +110,14 @@
     }
     .hero-badge {
       position: absolute;
-      right: 40px;
+      right: 50%;
       top: 50%;
-      transform: translateY(-50%);
-      width: 320px;
+      transform: translate(50%, -50%);
+      width: 520px;
+      max-width: 90%;
       z-index: 1;
       pointer-events: none;
-      filter: drop-shadow(0 0 40px rgba(200,16,46,.15));
+      filter: drop-shadow(0 0 60px rgba(200,16,46,.25));
     }
     .hero-content { position: relative; z-index: 2; max-width: 760px; }
     .eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
@@ -263,6 +264,82 @@
       display: block; background: var(--panel);
     }
     .section-empty { font-size: .85rem; color: var(--muted); text-align: center; padding: 24px 0; }
+
+    /* ─── FLIPBOOK ─── */
+    .flipbook-container {
+      max-width: 900px;
+      margin: 0 auto;
+      perspective: 1000px;
+      background: var(--panel);
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+    }
+    .flipbook-pages {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin: 32px 0;
+      min-height: 600px;
+    }
+    .flipbook-page {
+      width: 100%;
+      max-width: 600px;
+      height: 550px;
+      background: #fff;
+      border-radius: 6px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,.3);
+      overflow-y: auto;
+      font-family: var(--font-body);
+      color: var(--black);
+      font-size: .95rem;
+      line-height: 1.6;
+      text-align: left;
+    }
+    .flipbook-page h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+      letter-spacing: .05em;
+    }
+    .flipbook-page ul, .flipbook-page ol {
+      margin-left: 20px;
+      margin-bottom: 16px;
+    }
+    .flipbook-page li { margin-bottom: 10px; }
+    .flipbook-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .flipbook-btn {
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background .2s;
+      font-size: .85rem;
+    }
+    .flipbook-btn:hover { background: var(--accent2); }
+    .flipbook-btn:disabled {
+      background: var(--muted2);
+      cursor: not-allowed;
+    }
+    .flipbook-counter {
+      font-size: .9rem;
+      color: var(--muted);
+      font-weight: 600;
+      min-width: 80px;
+    }
 
     /* ─── UPDATES / POSTS (dynamic, from dashboard) ─── */
     .updates-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
@@ -566,15 +643,22 @@
     </div>
   </section>
 
-  <!-- ─── LATEST UPDATES (live from dashboard) ─── -->
+  <!-- ─── WHAT TO EXPECT (Flip Book) ─── -->
   <section class="section" id="updates">
     <div class="container">
-      <div class="label">From The Team</div>
-      <h2 class="section-title">LATEST UPDATES</h2>
-      <div class="updates-grid" id="updates-grid"></div>
-      <p class="section-empty" id="updates-empty" style="display:none;">
-        No updates posted yet — check back soon.
+      <div class="label">Your Journey</div>
+      <h2 class="section-title">WHAT TO EXPECT</h2>
+      <p class="section-body" style="margin-bottom: 56px;">
+        From your first consultation to bringing your dog home trained and confident. Flip through our process guide to understand every step of your training journey.
       </p>
+      <div class="flipbook-container">
+        <div class="flipbook-pages" id="flipbook-pages"></div>
+        <div class="flipbook-nav">
+          <button class="flipbook-btn" id="prev-btn" onclick="flipbook.prev()">← Previous</button>
+          <span class="flipbook-counter"><span id="page-num">1</span> / <span id="page-total">1</span></span>
+          <button class="flipbook-btn" id="next-btn" onclick="flipbook.next()">Next →</button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -737,6 +821,84 @@
         .then(function (r) { return r.json(); })
         .then(function (d) { renderPosts(d.posts); })
         .catch(function () { document.getElementById("updates-empty").style.display = "block"; });
+
+      // Flipbook initialization
+      var flipbook = {
+        currentPage: 0,
+        pages: [
+          {
+            title: "Your Dog Training Journey Starts Here",
+            content: "<p><strong>Welcome to Rogue Intelligence Dog Training.</strong></p><p>This guide walks you through what to expect from your first conversation all the way through your dog's transformation and beyond.</p><p>Whether you choose Board &amp; Train or Owner Lessons, you're joining a program built on three core principles:</p><ul><li><strong>Consistency</strong> — Clear expectations, every single day</li><li><strong>Leadership</strong> — Structure that builds confidence</li><li><strong>Understanding</strong> — Training that sticks</li></ul><p style='margin-top: 20px; color: #c8102e;'><strong>Let's get started →</strong></p>"
+          },
+          {
+            title: "Step 1: The Consultation",
+            content: "<h4 style='color: #c8102e; margin-bottom: 12px;'>Getting to Know You & Your Dog</h4><p>We start with a conversation. Not a sales pitch — a real understanding of:</p><ul><li>Your dog's current behavior and temperament</li><li>What problems you want solved (or what you want to build)</li><li>Your goals for your dog's future</li><li>Your lifestyle and how training fits into it</li></ul><p style='margin-top: 20px;'><strong>Outcome:</strong> A custom recommendation tailored to your dog and your needs. No cookie-cutter programs.</p>"
+          },
+          {
+            title: "Step 2: Choosing Your Program",
+            content: "<h4 style='color: #c8102e; margin-bottom: 12px;'>Board &amp; Train vs. Owner Lessons</h4><p><strong>Board &amp; Train:</strong> Your dog lives with us. We train 5-6 days a week. You learn to maintain it at home.</p><p><strong>Owner Lessons:</strong> You train alongside your dog. We teach you the techniques, you build the handler skills.</p><p style='margin-top: 20px;'>Both work. The right choice depends on your schedule, your dog's needs, and your goals.</p><p style='margin-top: 20px;'><strong>Timeline:</strong> 2–8 weeks, depending on program.</p>"
+          },
+          {
+            title: "Step 3: Training Begins",
+            content: "<h4 style='color: #c8102e; margin-bottom: 12px;'>The Work Starts</h4><p><strong>Board &amp; Train:</strong> Your dog arrives at our facility. Daily training begins immediately. We send video updates 2-3x per week so you see the progress.</p><p><strong>Owner Lessons:</strong> We schedule your first session. You show up with your dog, and we start hands-on training with you as the handler.</p><p style='margin-top: 20px;'>Either way, your dog is working on:</p><ul><li>Foundation obedience (sit, stay, come, leash manners)</li><li>Building focus and impulse control</li><li>Confidence through structured training</li></ul>"
+          },
+          {
+            title: "Step 4: Progress & Milestones",
+            content: "<h4 style='color: #c8102e; margin-bottom: 12px;'>Watching It Click</h4><p>Around week 2-3, you'll see real changes:</p><ul><li>Better leash manners</li><li>Faster responses to commands</li><li>Calmer behavior in the home</li><li>More focus and engagement with you</li></ul><p style='margin-top: 20px;'><strong>Board &amp; Train:</strong> Video updates show your dog's progress. You see the transformation happening.</p><p><strong>Owner Lessons:</strong> You're learning alongside your dog. Each session builds on the last.</p>"
+          },
+          {
+            title: "Step 5: Midpoint Check-In",
+            content: "<h4 style='color: #c8102e; margin-bottom: 12px;'>Are We On Track?</h4><p>By the midpoint, we evaluate:</p><ul><li>Progress against your original goals</li><li>Any adjustments needed to the training plan</li><li>What comes next (escalation, new behaviors, etc.)</li></ul><p style='margin-top: 20px;'><strong>Board &amp; Train:</strong> If you're on the fence about program length, this is where we decide if more time helps or if your dog is ready to come home.</p><p><strong>Owner Lessons:</strong> We plan remaining sessions based on how quickly your dog (and you) are progressing.</p>"
+          },
+          {
+            title: "Step 6: Graduation & Owner Training",
+            content: "<h4 style='color: #c8102e; margin-bottom: 12px;'>Time to Bring It Home</h4><p><strong>Board &amp; Train Clients:</strong> We schedule your owner training session(s). You come in and learn how to maintain everything we've built with your dog.</p><p style='margin-top: 20px;'><strong>We teach you:</strong></p><ul><li>How to execute commands consistently</li><li>How to read your dog's behavior</li><li>How to troubleshoot when they slip</li><li>How to continue building on the foundation</li></ul><p style='margin-top: 20px;'>This isn't \"here's your dog\" — this is \"here's how YOU become the handler.\"</p>"
+          },
+          {
+            title: "Step 7: Taking Your Dog Home",
+            content: "<h4 style='color: #c8102e; margin-bottom: 12px;'>The Real Work Begins (For You)</h4><p>Your dog comes home trained and confident. Now the work is maintaining it.</p><p style='margin-top: 20px;'><strong>Critical first 2 weeks:</strong></p><ul><li>Consistency with commands</li><li>Same structure at home</li><li>No regression because you got lazy</li></ul><p style='margin-top: 20px;'><strong>We're here:</strong> Email or text with questions. We don't disappear after graduation.</p><p style='margin-top: 20px;'>Most clients get a 30-day follow-up call to make sure everything's clicking at home.</p>"
+          },
+          {
+            title: "Step 8: Long-Term Support",
+            content: "<h4 style='color: #c8102e; margin-bottom: 12px;'>Beyond Graduation</h4><p><strong>Booster Lessons Available:</strong> If you hit a plateau or want to add advanced behaviors (distance commands, off-leash work, etc.), we offer follow-up sessions.</p><p style='margin-top: 20px;'><strong>Community:</strong> You're now part of the RI Dog Training network. Access to resources, tips, training videos, and a community of handlers doing the same work.</p><p style='margin-top: 20px;'><strong>Your Dog's Future:</strong> You have the skills to maintain and build on what we started. The confidence. The bond. The ability to handle your dog in any situation.</p>"
+          },
+          {
+            title: "Ready to Get Started?",
+            content: "<p style='font-size: 1.1rem;'><strong>Let's build something together.</strong></p><p style='margin-top: 24px;'>Your first step is a conversation. No obligation. Just a chance to talk about your dog, your goals, and whether we're the right fit.</p><p style='margin-top: 24px;'><strong>Reach out:</strong></p><p><strong>Email:</strong> Info@ri-dogtraining.com</p><p><strong>Phone:</strong> (480) 269-0530</p><p style='margin-top: 24px;'>We're based in Chandler, AZ, and serve the greater Phoenix Valley. Board &amp; Train or Owner Lessons — we've got a path forward for your dog.</p><p style='margin-top: 32px; color: #c8102e; font-weight: 600;'><strong>One dog. One family. One success story at a time.</strong></p>"
+          }
+        ],
+        init: function() {
+          var container = document.getElementById("flipbook-pages");
+          if (!container || this.pages.length === 0) return;
+
+          container.innerHTML = '<div class="flipbook-page" id="current-page"></div>';
+          document.getElementById("page-total").textContent = this.pages.length;
+          this.render();
+        },
+        render: function() {
+          var page = this.pages[this.currentPage];
+          var pageEl = document.getElementById("current-page");
+          if (pageEl) {
+            pageEl.innerHTML = '<h3>' + page.title + '</h3>' + page.content;
+          }
+          document.getElementById("page-num").textContent = this.currentPage + 1;
+          document.getElementById("prev-btn").disabled = this.currentPage === 0;
+          document.getElementById("next-btn").disabled = this.currentPage === this.pages.length - 1;
+        },
+        next: function() {
+          if (this.currentPage < this.pages.length - 1) {
+            this.currentPage++;
+            this.render();
+          }
+        },
+        prev: function() {
+          if (this.currentPage > 0) {
+            this.currentPage--;
+            this.render();
+          }
+        }
+      };
+      flipbook.init();
     })();
   </script>
 
