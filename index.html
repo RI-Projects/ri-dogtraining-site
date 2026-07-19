@@ -3,14 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rogue Intelligence Dog Training — veteran-owned Board & Train and owner-lesson programs built on consistency, leadership, and understanding. Chandler, AZ, serving the greater Phoenix Valley." />
-  <title>Rogue Intelligence Dog Training</title>
+  <meta name="description" content="Rogue Intelligence Dog Training — veteran-owned Board & Train and owner-lesson programs in Chandler, AZ, serving Chandler, Gilbert, Tempe, Mesa, and the greater Phoenix Valley." />
+  <title>Rogue Intelligence Dog Training | Board & Train, Chandler AZ</title>
+  <link rel="canonical" href="https://ri-dogtraining.com/" />
   <link rel="icon" type="image/png" href="/favicon-32.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ri-dogtraining.com/" />
   <meta property="og:title" content="Rogue Intelligence Dog Training" />
   <meta property="og:description" content="Veteran-owned Board & Train and owner-lesson programs built on consistency, leadership, and understanding. Chandler, AZ." />
   <meta property="og:image" content="https://ri-dogtraining.com/ri-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://ri-dogtraining.com/#business",
+    "name": "Rogue Intelligence Dog Training",
+    "image": "https://ri-dogtraining.com/ri-logo.png",
+    "url": "https://ri-dogtraining.com/",
+    "telephone": "+1-480-269-0530",
+    "email": "Info@ri-dogtraining.com",
+    "priceRange": "$500-$4200",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chandler",
+      "addressRegion": "AZ",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Chandler, AZ" },
+      { "@type": "City", "name": "Gilbert, AZ" },
+      { "@type": "City", "name": "Tempe, AZ" },
+      { "@type": "City", "name": "Mesa, AZ" },
+      { "@type": "City", "name": "Phoenix, AZ" }
+    ],
+    "sameAs": [
+      "https://instagram.com/ri_dogtraining"
+    ],
+    "description": "Veteran-owned dog training company offering Board & Train and owner-lesson programs built on consistency, leadership, and understanding, serving the greater Phoenix Valley.",
+    "founder": {
+      "@type": "Organization",
+      "name": "Rogue Intelligence Dog Training"
+    }
+  }
+  </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -80,6 +119,11 @@
       transition: color .2s;
     }
     .nav-links a:hover { color: var(--white); }
+    .nav-mobile-cta { display: none; }
+    .nav-toggle {
+      display: none; background: none; border: none; color: var(--white);
+      font-size: 1.6rem; line-height: 1; cursor: pointer; padding: 4px 8px;
+    }
     .nav-cta {
       font-size: .72rem;
       font-weight: 700;
@@ -354,6 +398,18 @@
       font-family: var(--font-display); font-size: 1.15rem; letter-spacing: .04em; margin-bottom: 10px; color: var(--white);
     }
 
+    /* ─── FAQ ─── */
+    .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: var(--panel); border: 1px solid var(--border2); border-radius: 6px; padding: 4px 24px; }
+    .faq-item summary {
+      cursor: pointer; padding: 18px 0; font-weight: 600; font-size: .95rem; color: var(--white);
+      list-style: none; display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; color: var(--accent); font-size: 1.3rem; font-weight: 400; }
+    .faq-item[open] summary::after { content: '\2212'; }
+    .faq-item p { padding-bottom: 20px; font-size: .88rem; font-weight: 300; line-height: 1.65; color: var(--muted); }
+
     /* ─── CONTACT CTA ─── */
     .community { position: relative; overflow: hidden; text-align: center; padding: 120px 56px; }
     .community-bg {
@@ -387,7 +443,17 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 960px) {
       nav { padding: 20px 28px; }
-      .nav-links { display: none; }
+      .nav-links {
+        display: none; flex-direction: column; gap: 0; position: absolute;
+        top: 100%; left: 0; right: 0; background: var(--black);
+        border-bottom: 1px solid var(--border2); padding: 8px 28px 20px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 14px 0; border-top: 1px solid var(--border); }
+      .nav-mobile-cta { display: block; }
+      .nav-mobile-cta a { color: var(--accent); font-weight: 700; }
+      .nav-toggle { display: block; }
+      .nav-cta { display: none; }
       .hero { padding: 130px 28px 60px; }
       .hero-badge { display: none; }
       .section { padding: 72px 28px; }
@@ -416,10 +482,13 @@
       <li><a href="#lessons">Lessons</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#why">Why Us</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://app.ri-dogtraining.com">Client Login</a></li>
+      <li class="nav-mobile-cta"><a href="#contact">Book Now</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Book Now</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
   </nav>
 
   <!-- ─── HERO ─── -->
@@ -622,8 +691,8 @@
         Live pricing straight from our training system — updated as our programs evolve.
       </p>
       <div class="training-packages-grid" id="packages-grid"></div>
-      <p class="section-empty" id="packages-empty" style="display:none;">
-        Check back soon for featured packages, or reach out directly to build a custom plan.
+      <p class="section-empty" id="packages-empty">
+        Ask us about custom packages built around your dog's specific goals — reach out directly to build a plan.
       </p>
     </div>
   </section>
@@ -637,8 +706,8 @@
         Real dogs, real sessions, real transformations.
       </p>
       <div class="gallery-grid" id="gallery-grid"></div>
-      <p class="section-empty" id="gallery-empty" style="display:none;">
-        New training photos and videos are added regularly — check back soon.
+      <p class="section-empty" id="gallery-empty">
+        New training photos and videos from real Board & Train and lesson clients are added regularly.
       </p>
     </div>
   </section>
@@ -692,6 +761,78 @@
     </div>
   </section>
 
+  <!-- ─── FAQ ─── -->
+  <section class="section" id="faq" style="background:var(--dark);">
+    <div class="container">
+      <div class="label">Common Questions</div>
+      <h2 class="section-title">FAQ</h2>
+      <div class="faq-list" style="margin-top: 40px;">
+        <details class="faq-item">
+          <summary>Where is Rogue Intelligence Dog Training located?</summary>
+          <p>We're based in Chandler, AZ, and serve the greater Phoenix Valley, including Gilbert, Tempe, Mesa, and Phoenix.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long does Board & Train take?</summary>
+          <p>It depends on the program: Basic Obedience runs 2–3 weeks, Public Access 4–5 weeks, and Advanced Obedience 6–8 weeks. Every dog progresses at its own pace within that structure.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What's the difference between Board & Train and Lessons?</summary>
+          <p>Board & Train means your dog lives and trains with us daily in a structured environment, then we teach you how to maintain it at home. Lessons are one-on-one sessions where you and your dog train together from day one.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What training philosophy do you use?</summary>
+          <p>Consistency, leadership, and understanding. We train for confidence, communication, and teamwork — not just memorized commands — so your dog can think, adapt, and stay focused through real-world distractions.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you train puppies and adult dogs?</summary>
+          <p>Yes — our programs are built around your dog's individual needs, whether that's foundational work with a puppy or addressing established behaviors in an adult dog.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How much does dog training cost?</summary>
+          <p>Owner lessons start at $500 for a 4–5 session package. Board & Train programs range from $1,500 to $3,500 depending on program length and scope. Exact pricing is shown in the Board & Train and Lessons sections above.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where is Rogue Intelligence Dog Training located?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We're based in Chandler, AZ, and serve the greater Phoenix Valley, including Gilbert, Tempe, Mesa, and Phoenix." }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does Board & Train take?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It depends on the program: Basic Obedience runs 2–3 weeks, Public Access 4–5 weeks, and Advanced Obedience 6–8 weeks." }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between Board & Train and Lessons?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Board & Train means your dog lives and trains with us daily in a structured environment, then we teach you how to maintain it at home. Lessons are one-on-one sessions where you and your dog train together from day one." }
+      },
+      {
+        "@type": "Question",
+        "name": "What training philosophy do you use?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Consistency, leadership, and understanding. We train for confidence, communication, and teamwork, so your dog can think, adapt, and stay focused through real-world distractions." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you train puppies and adult dogs?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — our programs are built around your dog's individual needs, whether that's foundational work with a puppy or addressing established behaviors in an adult dog." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does dog training cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Owner lessons start at $500 for a 4-5 session package. Board & Train programs range from $1,500 to $3,500 depending on program length and scope." }
+      }
+    ]
+  }
+  </script>
+
   <!-- ─── CONTACT ─── -->
   <section class="community" id="contact">
     <div class="community-bg"></div>
@@ -724,6 +865,21 @@
     (function () {
       var API_BASE = "https://app.ri-dogtraining.com";
 
+      var navToggle = document.getElementById("nav-toggle");
+      var navLinks = document.querySelector(".nav-links");
+      if (navToggle && navLinks) {
+        navToggle.addEventListener("click", function () {
+          var isOpen = navLinks.classList.toggle("open");
+          navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+        navLinks.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            navLinks.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
       function escapeHtml(str) {
         var div = document.createElement("div");
         div.textContent = str == null ? "" : String(str);
@@ -742,9 +898,9 @@
         var grid = document.getElementById("packages-grid");
         var empty = document.getElementById("packages-empty");
         if (!packages || !packages.length) {
-          empty.style.display = "block";
           return;
         }
+        empty.style.display = "none";
         grid.innerHTML = packages.map(function (p) {
           var features = "<li>" + p.sessions + " session" + (p.sessions === 1 ? "" : "s") + "</li>";
           (p.benefits || []).forEach(function (b) {
@@ -770,40 +926,14 @@
         var grid = document.getElementById("gallery-grid");
         var empty = document.getElementById("gallery-empty");
         if (!items || !items.length) {
-          empty.style.display = "block";
           return;
         }
+        empty.style.display = "none";
         grid.innerHTML = items.map(function (item) {
           if (item.mediaType === "VIDEO") {
             return '<video src="' + item.mediaUrl + '" muted loop playsinline preload="metadata"></video>';
           }
           return '<img src="' + item.mediaUrl + '" alt="' + escapeHtml(item.caption || "Training photo") + '" loading="lazy" />';
-        }).join("");
-      }
-
-      function renderPosts(posts) {
-        var grid = document.getElementById("updates-grid");
-        var empty = document.getElementById("updates-empty");
-        if (!posts || !posts.length) {
-          empty.style.display = "block";
-          return;
-        }
-        grid.innerHTML = posts.map(function (post) {
-          var media = post.media && post.media[0] && post.media[0].galleryItem;
-          var mediaHtml = "";
-          if (media) {
-            mediaHtml = media.mediaType === "VIDEO"
-              ? '<video src="' + media.mediaUrl + '" muted loop playsinline preload="metadata"></video>'
-              : '<img src="' + media.mediaUrl + '" alt="" loading="lazy" />';
-          }
-          var title = post.title ? '<h4 class="update-title">' + escapeHtml(post.title) + "</h4>" : "";
-          return (
-            '<div class="update-card">' + mediaHtml +
-            '<div class="update-date">' + formatDate(post.createdAt) + "</div>" +
-            title +
-            '<p class="why-body">' + escapeHtml(post.body) + "</p>" +
-            "</div>"
-          );
         }).join("");
       }
 
@@ -816,11 +946,6 @@
         .then(function (r) { return r.json(); })
         .then(function (d) { renderGallery(d.items); })
         .catch(function () { document.getElementById("gallery-empty").style.display = "block"; });
-
-      fetch(API_BASE + "/api/public/posts")
-        .then(function (r) { return r.json(); })
-        .then(function (d) { renderPosts(d.posts); })
-        .catch(function () { document.getElementById("updates-empty").style.display = "block"; });
 
       // Flipbook initialization
       var flipbook = {

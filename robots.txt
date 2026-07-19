@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ri-dogtraining.com/sitemap.xml

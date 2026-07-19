@@ -1,0 +1,3 @@
+Contact: mailto:Info@ri-dogtraining.com
+Preferred-Languages: en
+Canonical: https://ri-dogtraining.com/.well-known/security.txt
