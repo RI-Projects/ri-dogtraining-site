@@ -1,22 +1,70 @@
 # Rogue Intelligence Dog Training
 
-> Veteran-owned dog training company based in Chandler, AZ, serving the greater
-> Phoenix Valley (Chandler, Gilbert, Tempe, Mesa, Phoenix). Offers Board & Train
-> and one-on-one owner lesson programs built on three principles: consistency,
-> leadership, and understanding — training for confidence, communication, and
-> teamwork rather than just memorized commands.
+> Veteran-owned dog training company based in Chandler, Arizona, serving the
+> greater Phoenix Valley (Chandler, Gilbert, Tempe, Mesa, Queen Creek, Ahwatukee,
+> Scottsdale, Sun Lakes, and Phoenix). Offers full-immersion Board & Train and
+> one-on-one owner-lesson programs for puppies and adult dogs, built on three
+> principles — consistency, leadership, and understanding — training dogs for
+> confidence, communication, and teamwork rather than just memorized commands.
 
-## Programs
-- Board & Train: 2-3 weeks (Basic Obedience) up to 6-8 weeks (Advanced
-  Obedience), dog trains daily on-site, owner learns to maintain results.
-- Owner Lessons: one-on-one sessions, 4-5 sessions (Basic) up to 10-12
-  sessions (Advanced Obedience), handler trains alongside the dog from day one.
+## Why Rogue Intelligence
+- Veteran-owned and operated; lead trainer is a military veteran.
+- Trains the handler, not just the dog — every program includes owner training.
+- Works with puppies and adult dogs of any breed, including reactive, anxious,
+  and behaviorally challenging dogs.
+- Board & Train includes video progress updates and a structured, supportive
+  live-in environment.
+- E-collar training available as an option on select programs.
+
+## Programs & Pricing (USD)
+
+### Board & Train (dog lives and trains on-site 5–6 days/week)
+- Basic Obedience — 2–3 weeks — $1,500. Foundation: sit, stay, come, leash
+  manners, impulse control; boarding & meals, obstacle course, video updates,
+  owner training session.
+- Public Access — 4–5 weeks — $2,500. Adds public-environment training,
+  distraction desensitization, advanced impulse control, social confidence.
+- Advanced Obedience (most popular) — 6–8 weeks — $3,500. Adds off-leash
+  precision, distance commands & hand signals, multi-dog dynamics, emergency
+  recall, comprehensive owner training, 30-day follow-up support.
+
+### Owner Lessons (you train alongside your dog from day one)
+- Basic Obedience — 4–5 sessions — $500.
+- Public Access — 7–8 sessions — $950.
+- Advanced Obedience — 10–12 sessions — $1,500.
+
+## Service Areas
+Chandler, Gilbert, Tempe, Mesa, Queen Creek, Ahwatukee, Scottsdale, Sun Lakes,
+and Phoenix, Arizona (East Valley / greater Phoenix metro).
+
+## FAQ
+- Where are you located? Chandler, AZ, serving the greater Phoenix Valley.
+- Board & Train vs. Lessons? Board & Train = your dog lives and trains with us,
+  then we teach you to maintain it. Lessons = you and your dog train together
+  from day one.
+- Do you train puppies and adult dogs? Yes, both.
+- Do you train reactive/anxious/aggressive dogs? Yes.
+- Do you offer e-collar training? Yes, as an option on select programs.
+- How much does it cost? Owner lessons from $500; Board & Train $1,500–$3,500.
 
 ## Contact
 - Phone: (480) 269-0530 / (310) 803-4204
 - Email: Info@ri-dogtraining.com
 - Instagram: @ri_dogtraining
-- Location: Chandler, AZ
+- Location: Chandler, Arizona, USA
+- Client portal: https://app.ri-dogtraining.com
 
 ## Pages
-- [Homepage](https://ri-dogtraining.com/): programs, pricing, FAQ, gallery, contact
+- [Homepage](https://ri-dogtraining.com/): programs, pricing, service areas, FAQ, gallery, contact
+
+### City service pages
+- [Dog Training in Gilbert, AZ](https://ri-dogtraining.com/dog-training-gilbert-az.html)
+- [Dog Training in Tempe, AZ](https://ri-dogtraining.com/dog-training-tempe-az.html)
+- [Dog Training in Mesa, AZ](https://ri-dogtraining.com/dog-training-mesa-az.html)
+- [Dog Training in Queen Creek, AZ](https://ri-dogtraining.com/dog-training-queen-creek-az.html)
+
+### Guides
+- [Dog Training Guides hub](https://ri-dogtraining.com/guides.html)
+- [Board & Train vs. Owner Lessons](https://ri-dogtraining.com/board-train-vs-owner-lessons.html)
+- [How Much Does Dog Training Cost in Arizona?](https://ri-dogtraining.com/dog-training-cost-arizona.html)
+- [How to Choose a Dog Trainer](https://ri-dogtraining.com/how-to-choose-a-dog-trainer.html)
