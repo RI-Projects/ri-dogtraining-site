@@ -70,7 +70,10 @@
           "Leash manners",
           "Behavior modification",
           "Service dog public access training",
-          "E-collar training"
+          "E-collar training",
+          "Working dog development",
+          "Personal protection dog training",
+          "Security dog training"
         ],
         "address": {
           "@type": "PostalAddress",
@@ -101,8 +104,9 @@
         "description": "Veteran-owned dog training company offering Board & Train and one-on-one owner-lesson programs built on consistency, leadership, and understanding — training dogs for confidence, communication, and teamwork, serving Chandler and the greater Phoenix Valley.",
         "founder": {
           "@type": "Person",
-          "name": "Mason",
-          "description": "Veteran owner and lead trainer of Rogue Intelligence Dog Training."
+          "name": "Thomas",
+          "jobTitle": "Owner & Lead Trainer",
+          "description": "U.S. military veteran and professional dog trainer with 8+ years of experience and 300+ dogs trained, including personal protection and single- and dual-purpose security dog development."
         },
         "hasOfferCatalog": { "@id": "https://ri-dogtraining.com/#catalog" }
       },
@@ -458,6 +462,11 @@
       padding-left: .06em;
       color: var(--paper);
       transition: color .4s var(--ease);
+    }
+    .wordmark-plate img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     /* The sweep — a hairline passes across the plate, the way a mark is drawn */
     .wordmark-plate::after {
@@ -1532,7 +1541,7 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a class="wordmark" href="#" aria-label="Rogue Intelligence Dog Training — home">
-        <span class="wordmark-plate" aria-hidden="true"><span>RI</span></span>
+        <span class="wordmark-plate" aria-hidden="true"><img src="/ri-logo-badge.png" alt="" width="40" height="40" loading="eager"></span>
         <span class="wordmark-lines">
           <span class="wordmark-name">ROGUE<i>&bull;</i>INTELLIGENCE</span>
           <span class="wordmark-sub">DOG TRAINING &middot; CHANDLER AZ</span>
@@ -1543,6 +1552,7 @@
         <li><a href="#lessons">Lessons</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#why">Why Us</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#areas">Areas</a></li>
         <li><a href="/guides.html">Guides</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -1884,6 +1894,55 @@
   </section>
 
   <!-- ─── WHY CHOOSE ─── -->
+  <!-- ─── ABOUT / FOUNDER ─── -->
+  <section class="section" id="about">
+    <div class="shell">
+      <div class="rec-head" data-rec>
+        <div class="rec-rule"></div>
+        <p class="field">Meet Your Trainer</p>
+        <h2 class="rec-title display" data-reveal>Veteran-Owned. 8+ Years. 300+ Dogs Trained.</h2>
+      </div>
+
+      <div class="areas-grid">
+        <div data-reveal>
+          <p class="prose" style="margin-bottom: var(--s-5);">
+            Rogue Intelligence Dog Training is led by Thomas, a U.S. military veteran who traded
+            structured, high-stakes environments for a career built entirely around dogs. What
+            began as early exposure to tracking and trailing work grew into an 8+ year career
+            training working dogs — from family pets that need real-world manners to personal
+            protection and security dogs built to perform reliably under pressure.
+          </p>
+          <p class="prose" style="margin-bottom: var(--s-5);">
+            Over that time, Thomas has trained more than 300 dogs, developed personal protection
+            dogs from the ground up, and conditioned single- and dual-purpose security dogs —
+            work that demands the same consistency, leadership, and understanding used in every
+            Board &amp; Train and owner-lesson program here. That experience spans high-drive
+            working breeds — Belgian Malinois, Dutch Shepherds, German Shepherds, Rottweilers,
+            Doberman Pinschers, Cane Corsos, American Pit Bull Terriers, Mastiffs, and sporting
+            and herding breeds — alongside family dogs of every size and temperament.
+          </p>
+          <p class="prose">
+            Military service instilled the discipline, attention to detail, and calm-under-pressure
+            mindset that carries into every session — because a dog's training is only as reliable
+            as the structure and follow-through behind it.
+          </p>
+        </div>
+
+        <div data-reveal style="--d:.1s">
+          <p class="field" style="margin-bottom: var(--s-5);">By the Numbers</p>
+          <ul class="area-list">
+            <li>8+ years professional dog training experience</li>
+            <li>300+ dogs trained</li>
+            <li>Personal protection dogs developed and placed</li>
+            <li>Single- and dual-purpose security dogs conditioned</li>
+            <li>U.S. military veteran</li>
+            <li>Veteran-owned &amp; operated</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section section--alt" id="why">
     <div class="shell">
       <div class="rec-head" data-rec>
