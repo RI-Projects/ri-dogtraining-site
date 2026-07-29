@@ -206,6 +206,34 @@
               "description": "10–12 one-on-one sessions in off-leash precision, advanced obstacle work, distance commands and hand signals, multi-dog dynamics, and handler technique certification.",
               "provider": { "@id": "https://ri-dogtraining.com/#business" }
             }
+          },
+          {
+            "@type": "Offer",
+            "price": "2500",
+            "priceCurrency": "USD",
+            "url": "https://ri-dogtraining.com/#assistant-trainer",
+            "availability": "https://schema.org/InStock",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Basic Obedience — Assistant Trainer Program",
+              "serviceType": "Board and train dog training",
+              "description": "2–3 week live-in Basic Obedience program delivered by an Assistant Trainer under the lead trainer's direct supervision — the same foundation curriculum at a more accessible investment.",
+              "provider": { "@id": "https://ri-dogtraining.com/#business" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "price": "3500",
+            "priceCurrency": "USD",
+            "url": "https://ri-dogtraining.com/#assistant-trainer",
+            "availability": "https://schema.org/InStock",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Advanced Obedience — Assistant Trainer Program",
+              "serviceType": "Board and train dog training",
+              "description": "6–8 week live-in Advanced Obedience program delivered by an Assistant Trainer under the lead trainer's direct guidance and quality review — off-leash precision at a more accessible investment.",
+              "provider": { "@id": "https://ri-dogtraining.com/#business" }
+            }
           }
         ]
       }
@@ -1550,6 +1578,7 @@
       <ul class="nav-links">
         <li><a href="#board-train">Board &amp; Train</a></li>
         <li><a href="#lessons">Lessons</a></li>
+        <li><a href="#assistant-trainer">Assistant Trainer</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#why">Why Us</a></li>
         <li><a href="#about">About</a></li>
@@ -1694,6 +1723,29 @@
       <div class="lesson-list" id="lessons-grid"></div>
       <p class="section-empty" id="lessons-empty" style="display:none;">
         Ask us about custom lesson plans built around your dog's specific goals — reach out directly to build a plan.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── ASSISTANT TRAINER PROGRAM ─── -->
+  <section class="section" id="assistant-trainer">
+    <div class="shell">
+      <div class="rec-head rec-head--split" data-rec>
+        <div class="rec-rule"></div>
+        <p class="field">Same Standard. Guided Hands.</p>
+        <h2 class="rec-title display" data-reveal>Assistant Trainer Program</h2>
+        <p class="prose" data-reveal style="--d:.1s">
+          Every rep, reviewed. Your dog trains daily with one of our Assistant Trainers, working under
+          Thomas's direct supervision — every session plan, every progress check, signed off by the lead
+          trainer before it moves to the next step. Same curriculum, same daily structure, same finished
+          dog handed back to you. Built for owners who want the full Board &amp; Train result at a more
+          accessible investment.
+        </p>
+      </div>
+
+      <div class="training-packages-grid" id="assistant-trainer-grid"></div>
+      <p class="section-empty" id="assistant-trainer-empty" style="display:none;">
+        Ask us about the Assistant Trainer Program and how it fits your dog's goals — reach out directly to build a plan.
       </p>
     </div>
   </section>
@@ -1918,6 +1970,10 @@
           <summary>How do progress updates work during Board &amp; Train?</summary>
           <p>During Board &amp; Train, your dog trains 5–6 days a week and we send video progress updates so you can watch the transformation happen. Every program finishes with hands-on owner training so you can maintain the results at home.</p>
         </details>
+        <details class="faq-item">
+          <summary>What is the Assistant Trainer Program?</summary>
+          <p>The Assistant Trainer Program gives you the exact same Basic or Advanced Obedience curriculum, delivered by one of our Assistant Trainers under Thomas's direct supervision — every session plan and progress check is reviewed by the lead trainer. Same daily structure, same finished dog, at a more accessible investment.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -1980,6 +2036,11 @@
         "@type": "Question",
         "name": "How do progress updates work during Board & Train?",
         "acceptedAnswer": { "@type": "Answer", "text": "During Board & Train, your dog trains 5-6 days a week and we send video progress updates so you can watch the transformation happen. Every program finishes with hands-on owner training so you can maintain results at home." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Assistant Trainer Program?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The Assistant Trainer Program gives you the exact same Basic or Advanced Obedience curriculum, delivered by one of our Assistant Trainers under Thomas's direct supervision — every session plan and progress check is reviewed by the lead trainer. Same daily structure, same finished dog, at a more accessible investment." }
       }
     ]
   }
@@ -2191,6 +2252,30 @@
         }).join("");
       }
 
+      function renderAssistantTrainer(packages) {
+        var grid = document.getElementById("assistant-trainer-grid");
+        var empty = document.getElementById("assistant-trainer-empty");
+        if (!packages || !packages.length) {
+          empty.style.display = "block";
+          return;
+        }
+        empty.style.display = "none";
+        grid.innerHTML = packages.map(function (p) {
+          var duration = p.duration ? '<div class="package-duration">' + p.duration + " days</div>" : "";
+          var note = p.description ? '<p class="package-note">' + escapeHtml(p.description) + "</p>" : "";
+          var price = "$" + Number(p.price).toLocaleString();
+          return (
+            '<div class="training-card" data-reveal>' +
+            '<div class="package-header"><h4 class="package-title">' + escapeHtml(p.name.toUpperCase()) + "</h4>" + duration + "</div>" +
+            '<div class="pricing-row"><span class="price-large">' + price + "</span></div>" +
+            '<ul class="package-features"><li>Supervised by the lead trainer</li>' + packageFeaturesHtml(p) + "</ul>" +
+            note +
+            '<a href="mailto:Info@ri-dogtraining.com?subject=' + encodeURIComponent("Book " + p.name + " — Assistant Trainer Program") + '" class="btn btn-gold">Book Now</a>' +
+            "</div>"
+          );
+        }).join("");
+      }
+
       function renderGallery(items) {
         var grid = document.getElementById("gallery-grid");
         var empty = document.getElementById("gallery-empty");
@@ -2210,12 +2295,16 @@
         .then(function (r) { return r.json(); })
         .then(function (d) {
           var packages = d.packages || [];
-          renderBoardTrain(packages.filter(function (p) { return p.duration; }));
-          renderLessons(packages.filter(function (p) { return !p.duration; }));
+          var assistant = packages.filter(function (p) { return p.category === "ASSISTANT_TRAINER"; });
+          var standard = packages.filter(function (p) { return p.category !== "ASSISTANT_TRAINER"; });
+          renderBoardTrain(standard.filter(function (p) { return p.duration; }));
+          renderLessons(standard.filter(function (p) { return !p.duration; }));
+          renderAssistantTrainer(assistant);
         })
         .catch(function () {
           document.getElementById("board-train-empty").style.display = "block";
           document.getElementById("lessons-empty").style.display = "block";
+          document.getElementById("assistant-trainer-empty").style.display = "block";
         });
 
       fetch(API_BASE + "/api/public/gallery")
