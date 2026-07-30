@@ -479,7 +479,7 @@
       border: 1px solid var(--rule-200);
       border-radius: var(--radius);
       overflow: hidden;
-      background: linear-gradient(160deg, var(--ink-200), var(--ink-050));
+      background: var(--ink-050);
       transition: border-color .4s var(--ease);
     }
     .wordmark-plate span {
@@ -494,7 +494,8 @@
     .wordmark-plate img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      padding: 2px;
     }
     /* The sweep — a hairline passes across the plate, the way a mark is drawn */
     .wordmark-plate::after {
