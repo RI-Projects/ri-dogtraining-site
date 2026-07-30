@@ -1638,7 +1638,7 @@
           <a class="plot-row" href="#board-train">
             <span class="plot-row-top">
               <span class="plot-name">Basic Obedience</span>
-              <span class="plot-price">$3,500</span>
+              <span class="plot-price">Live catalog</span>
             </span>
             <span class="plot-line" style="--len:34%"><i style="--d:.15s"></i><b style="--d:.15s"></b></span>
             <span class="plot-foot"><span>4&ndash;6 Weeks</span><span>Foundation</span></span>
@@ -1647,7 +1647,7 @@
           <a class="plot-row" href="#board-train">
             <span class="plot-row-top">
               <span class="plot-name">Public Access</span>
-              <span class="plot-price">$5,200</span>
+              <span class="plot-price">Live catalog</span>
             </span>
             <span class="plot-line" style="--len:64%"><i style="--d:.3s"></i><b style="--d:.3s"></b></span>
             <span class="plot-foot"><span>3&ndash;9 Months</span><span>Real&nbsp;World</span></span>
@@ -1656,7 +1656,7 @@
           <a class="plot-row" href="#board-train">
             <span class="plot-row-top">
               <span class="plot-name">Advanced Obedience</span>
-              <span class="plot-price">$4,500</span>
+              <span class="plot-price">Live catalog</span>
             </span>
             <span class="plot-line" style="--len:100%"><i style="--d:.45s"></i><b style="--d:.45s"></b></span>
             <span class="plot-foot"><span>6&ndash;8 Weeks</span><span>Off&nbsp;Leash</span></span>
@@ -1948,7 +1948,7 @@
         </details>
         <details class="faq-item">
           <summary>How much does dog training cost?</summary>
-          <p>Owner lessons start at $500 for a 4–5 session package. Board &amp; Train programs range from $1,500 to $3,500 depending on program length and scope. Exact pricing is shown in the Board &amp; Train and Lessons sections above.</p>
+          <p>Investment depends on program format, length, goals, and support. Current published prices are loaded directly into the Board &amp; Train and Lessons sections above so the amount you see matches our active catalog.</p>
         </details>
         <details class="faq-item">
           <summary>Are you a veteran-owned business?</summary>
@@ -2010,7 +2010,7 @@
       {
         "@type": "Question",
         "name": "How much does dog training cost?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Owner lessons start at $500 for a 4-5 session package. Board & Train programs range from $1,500 to $3,500 depending on program length and scope." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Investment depends on program format, length, goals, and support. Current published prices are shown in the live Board & Train and Lessons sections on this page." }
       },
       {
         "@type": "Question",
@@ -2291,7 +2291,7 @@
         }).join("");
       }
 
-      fetch(API_BASE + "/api/public/packages")
+      fetch(API_BASE + "/api/public/packages?company=ri-dog-training")
         .then(function (r) { return r.json(); })
         .then(function (d) {
           var packages = d.packages || [];
@@ -2307,7 +2307,7 @@
           document.getElementById("assistant-trainer-empty").style.display = "block";
         });
 
-      fetch(API_BASE + "/api/public/gallery")
+      fetch(API_BASE + "/api/public/gallery?company=ri-dog-training")
         .then(function (r) { return r.json(); })
         .then(function (d) { renderGallery(d.items); })
         .catch(function () { document.getElementById("gallery-empty").style.display = "block"; });
