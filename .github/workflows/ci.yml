@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Static catalog integrity
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate HTML and JSON-LD
+        shell: python
+        run: |
+          import json
+          import pathlib
+          import re
+          from html.parser import HTMLParser
+
+          class Parser(HTMLParser):
+              pass
+
+          html_files = sorted(pathlib.Path(".").glob("*.html"))
+          if not html_files:
+              raise SystemExit("No HTML files found")
+
+          for path in html_files:
+              source = path.read_text(encoding="utf-8")
+              Parser().feed(source)
+              for block in re.findall(
+                  r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+                  source,
+                  flags=re.IGNORECASE | re.DOTALL,
+              ):
+                  json.loads(block)
+
+      - name: Enforce canonical CRM tenant
+        shell: python
+        run: |
+          import pathlib
+
+          source = pathlib.Path("index.html").read_text(encoding="utf-8")
+          required = (
+              "/api/public/packages?company=ri-dog-training",
+              "/api/public/gallery?company=ri-dog-training",
+          )
+          missing = [value for value in required if value not in source]
+          if missing:
+              raise SystemExit(f"Missing canonical CRM queries: {missing}")

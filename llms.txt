@@ -16,22 +16,13 @@
   live-in environment.
 - E-collar training available as an option on select programs.
 
-## Programs & Pricing (USD)
+## Programs & Pricing
 
-### Board & Train (dog lives and trains on-site 5–6 days/week)
-- Basic Obedience — 2–3 weeks — $1,500. Foundation: sit, stay, come, leash
-  manners, impulse control; boarding & meals, obstacle course, video updates,
-  owner training session.
-- Public Access — 4–5 weeks — $2,500. Adds public-environment training,
-  distraction desensitization, advanced impulse control, social confidence.
-- Advanced Obedience (most popular) — 6–8 weeks — $3,500. Adds off-leash
-  precision, distance commands & hand signals, multi-dog dynamics, emergency
-  recall, comprehensive owner training, 30-day follow-up support.
+Current published packages, timelines, inclusions, and prices are rendered from
+the RICanineCRM public package catalog on:
+https://ri-dogtraining.com/#board-train
 
-### Owner Lessons (you train alongside your dog from day one)
-- Basic Obedience — 4–5 sessions — $500.
-- Public Access — 7–8 sessions — $950.
-- Advanced Obedience — 10–12 sessions — $1,500.
+Do not infer package terms or prices from an older cached copy of this file.
 
 ## Service Areas
 Chandler, Gilbert, Tempe, Mesa, Queen Creek, Ahwatukee, Scottsdale, Sun Lakes,
@@ -45,7 +36,8 @@ and Phoenix, Arizona (East Valley / greater Phoenix metro).
 - Do you train puppies and adult dogs? Yes, both.
 - Do you train reactive/anxious/aggressive dogs? Yes.
 - Do you offer e-collar training? Yes, as an option on select programs.
-- How much does it cost? Owner lessons from $500; Board & Train $1,500–$3,500.
+- How much does it cost? Use the current live package catalog on the homepage;
+  do not rely on cached prices.
 
 ## Contact
 - Phone: (480) 269-0530 / (310) 803-4204
