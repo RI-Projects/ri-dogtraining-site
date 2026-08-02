@@ -2057,9 +2057,41 @@
         Chandler, AZ &mdash; serving the greater Phoenix Valley. Board &amp; Train or owner lessons.
         Reach out and we'll get you scheduled.
       </p>
-      <div class="community-actions" data-reveal style="--d:.18s">
-        <a href="mailto:Info@ri-dogtraining.com?subject=Dog%20Training%20Inquiry" class="btn btn-primary" data-magnetic>Email Us</a>
-        <a href="tel:4802690530" class="btn btn-ghost">(480) 269-0530</a>
+      <div class="community-form-wrapper" data-reveal style="--d:.18s; width: 100%; max-width: 600px; margin: 0 auto; margin-top: var(--s-6);">
+        <form action="https://formsubmit.co/Info@ri-dogtraining.com" method="POST" class="contact-form">
+          <input type="hidden" name="_subject" value="New Dog Training Inquiry!">
+          <input type="hidden" name="_template" value="box">
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_next" value="https://ri-dogtraining.com/">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" name="name" class="form-control" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" name="phone" class="form-control" required placeholder="(480) 123-4567">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" name="email" class="form-control" required placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Dog's Name & Breed</label>
+              <input type="text" name="dog" class="form-control" required placeholder="Max, GSD">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">How can we help?</label>
+            <textarea name="message" class="form-control" required placeholder="Tell us a little bit about your dog and your goals..."></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" data-magnetic>Submit Inquiry</button>
+          </div>
+        </form>
       </div>
     </div>
   </section>
