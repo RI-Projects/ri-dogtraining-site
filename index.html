@@ -75,6 +75,28 @@
           "Personal protection dog training",
           "Security dog training"
         ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Dog Training Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Board and Train",
+                "description": "Full-immersion live-in dog training focusing on consistency, leadership, and obedience."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Owner Lessons",
+                "description": "One-on-one private lessons where owner and dog learn together."
+              }
+            }
+          ]
+        },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Chandler",
@@ -1563,6 +1585,7 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;">Skip to main content</a>
   <div class="plot-edge" aria-hidden="true"></div>
 
   <!-- ─── NAV ─── -->
@@ -1596,6 +1619,7 @@
     </div>
   </nav>
 
+  <main id="main-content">
   <!-- ─── HERO ─── -->
   <section class="hero" aria-label="Hero">
     <div class="shell">
@@ -1913,6 +1937,44 @@
       </div>
     </div>
   </section>
+  <!-- 🔹 FREE GUIDES 🔹 -->
+  <section class="section" id="resources">
+    <div class="shell">
+      <div class="rec-head" data-rec>
+        <span class="rec-label">Free Resources</span>
+        <h2 class="rec-title">DOWNLOADABLE <span class="gold">GUIDES</span></h2>
+      </div>
+      <div class="principle-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: var(--s-6);">
+        <div class="principle" data-reveal>
+          <h3 class="principle-term">The Complete FAQ Guide</h3>
+          <p class="principle-def" style="margin-bottom: 20px;">Every single question you have about our programs, methods, and results, answered in one easy-to-read document.</p>
+          <form action="https://formsubmit.co/info@ri-dogtraining.com" method="POST" class="contact-form">
+            <input type="hidden" name="_subject" value="Lead Capture: FAQ Guide Download">
+            <input type="hidden" name="_next" value="https://ri-dogtraining.com/downloads/faq-guide.html">
+            <input type="text" name="_honey" style="display:none">
+            <div class="form-group" style="margin-bottom: 10px;">
+              <input type="email" name="email" class="form-control" required placeholder="Enter email to download">
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">Get The Guide</button>
+          </form>
+        </div>
+
+        <div class="principle" data-reveal>
+          <h3 class="principle-term">Reactivity & Leash Pulling</h3>
+          <p class="principle-def" style="margin-bottom: 20px;">A real-world, actionable guide to stopping leash pulling and reactivity before it even starts. Reclaim your walks.</p>
+          <form action="https://formsubmit.co/info@ri-dogtraining.com" method="POST" class="contact-form">
+            <input type="hidden" name="_subject" value="Lead Capture: Reactivity Guide Download">
+            <input type="hidden" name="_next" value="https://ri-dogtraining.com/downloads/reactivity-leash-guide.html">
+            <input type="text" name="_honey" style="display:none">
+            <div class="form-group" style="margin-bottom: 10px;">
+              <input type="email" name="email" class="form-control" required placeholder="Enter email to download">
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">Get The Guide</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ─── FAQ ─── -->
   <section class="section section--deep" id="faq">
@@ -2094,6 +2156,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ─── FOOTER ─── -->
   <footer>
