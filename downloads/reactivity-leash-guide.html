@@ -91,13 +91,43 @@
       h1, .section-title { color: #000; }
       .paragraph { color: #333; }
       .action-step { background: #f9f9f9; border-left-color: #000; }
-      .step-title { color: #000; }
+      .action-bar { display: none; }
+    }
+    .action-bar {
+      display: flex;
+      gap: 15px;
+      justify-content: flex-end;
+      margin-bottom: 30px;
+    }
+    .action-bar .btn {
+      background: var(--gold);
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-family: var(--font-mark);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+    .action-bar .btn:hover { opacity: 0.8; }
+    .action-bar .btn-secondary {
+      background: rgba(201, 168, 76, 0.15);
+      color: var(--gold);
     }
   </style>
 </head>
 <body>
 
 <div class="document-container">
+  <div class="action-bar">
+    <button onclick="window.print()" class="btn">Save as PDF</button>
+    <a href="mailto:?subject=Dog Training Reactivity Guide&body=Check out this helpful guide from Rogue Intelligence: https://ri-dogtraining.com/downloads/reactivity-leash-guide.html" class="btn btn-secondary">Send via Email</a>
+  </div>
   <div class="header">
     <h1>THE REAL-LIFE GUIDE: REACTIVITY & LEASH PULLING</h1>
     <div class="subtitle">Actionable Steps to Regain Control and Confidence on Walks</div>
